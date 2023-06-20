@@ -47,8 +47,8 @@ function draw() {
   for (let y = 0; y <= height; y += height / divs) {
     line(0, y, width, y);
   }
-  if (positionText) { text(positionText, width / 2, height / 2);}
 */
+  if (positionText) { text(positionText, width / 2, height / 2);}
   // TEST: draw the door & entry and connecting arrows.
   const delta = 25, r = delta / 4, weight = delta / 4;
   strokeWeight(weight);

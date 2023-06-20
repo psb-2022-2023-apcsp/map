@@ -11,9 +11,9 @@ datastartf, dataendf = """/** BHS Map data.
 var rooms = [\n""", '];'
 
 def update(csvpath, verb=False):
-    """Read csvpath, add next references in both from and to for each name,
-    update stairs and turns based on their positions, replace stair and turn
-    names with new ones, reformat .CSV and save it, and echo .JS data."""
+    """Read .CSV, add a next references for both from and to for each name,
+    update stairs and turns names based on their positions, replace old stair
+    and turn names, reformat .CSV and save it, and echo .JS data."""
     # Read csvpath w/ columns name,x,y,direction,next1,next2,next3 into datadict
     # w/ keys 'name' of dictionaries w/ keys str 'name', int 'x', int 'y',
     # str 'direction', set 'next'.
@@ -96,7 +96,8 @@ def update(csvpath, verb=False):
     print(f"/* Updated .CSV: {name}-updated{ext} */")
     with open(f"{name}-updated{ext}", 'w') as f:
         writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow('name,x,y,direction,next1,next2,next3,next4'.split(','))
+        assert max(len(row) for row in data) <= 9, f".CSV data row > 9"
+        writer.writerow('name,x,y,direction,next1,next2,next3,next4,next5'.split(','))
         writer.writerows(data)
     # Print JavaScript data.
     js = ''

@@ -101,7 +101,7 @@ function annotate(room) {
       if (room.direction.toLowerCase() == "e") x1 += delta;
       if (room.direction.toLowerCase() == "w") x1 -= delta;
     }
-      if (room.name[0] == "t") {
+      if (room.name[0].toLowerCase() == "t") {
         fill('green');
         x1 += delta / 4;
         y1 -= delta / 4;

@@ -14,6 +14,11 @@ This is the final project of BHS 2022-2023 APCS-P G-Block. There are several pro
 ## TODO
 
 - Add `building` and `floor` fields to data and use them so node type is not based on encoding w/ `'r'`, `'s'`, `'t'`.
+- Complete all floors in 115 Greenough (especially floor 2) and all floors in 22 Tappan.
+- Check all arrow connections &mdash; especially stair connections &mdash; to see that they are bidirectional.
+- **Actually write the algorithm that searches room data for the shortest path from one room to another.**
+- Display shortest path on the map.
+- Add UI to to select *from* and *to* rooms.
 
 <hr>
 
